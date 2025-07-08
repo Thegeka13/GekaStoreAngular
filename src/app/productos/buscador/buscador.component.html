@@ -1,0 +1,22 @@
+<form class="d-flex mb-4" (ngSubmit)="buscar()" #form="ngForm">
+  <input
+    class="form-control me-2"
+    type="search"
+    [(ngModel)]="query"
+    name="query"
+    placeholder="Buscar productos"
+  />
+
+  <select
+    class="form-select me-2"
+    [(ngModel)]="equipoSeleccionado"
+    name="equipoSeleccionado"
+  >
+    <option [ngValue]="null">Todos los equipos</option>
+    <option *ngFor="let equipo of equipos" [ngValue]="equipo.id">
+      {{ equipo.nombre }}
+    </option>
+  </select>
+
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>

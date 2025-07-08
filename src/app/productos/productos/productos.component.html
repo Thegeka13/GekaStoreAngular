@@ -1,0 +1,10 @@
+<br>
+
+<app-buscador (resultadosEncontrados)="actualizarResultados($event)"></app-buscador>
+
+<!-- Lista de productos -->
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let producto of productos">
+    <app-producto [producto]="producto"></app-producto>
+  </div>
+</div>
